@@ -113,7 +113,7 @@ void defender(){
       backwardwheel();
      }
      //ir sensor face enemy
-    else if(digitalRead(irSensor1)==HIGH)
+    else if(digitalRead(irSensor1)==HIGH||digitalRead(irSensor2)==HIGH)
     {
       stopwheel();
      }
@@ -132,7 +132,7 @@ void defender(){
      }
      
 void offender(){
-    if (digitalRead(irSensor1)==HIGH||digitalRead(irSensor2)==HIGH) 
+    if (digitalRead(irSensor1)==HIGH||digitalRead(irSensor2)==HIGH||distance1 < 10) 
     {
       for (int j = 0; j <= 5; j++)
       {
